@@ -20,8 +20,7 @@ B.renamed<-rename(B,"AGB"="An gambiae_complex",
                   "AGS"="An gambiae ss",
                   "SSMF"="SS M Form (An colluzzi or Mopti forms)",
                   "SSSF"="SS S Form (savanah or Bamako forms)",
-                  "AA"="An arabiensis"
-)
+                  "AA"="An arabiensis")
 names(B.renamed)
 view(B.renamed)
 nrow(subset(B.renamed,SSMF=="Y"))
@@ -123,16 +122,28 @@ Tanzania<- data.frame(Species=c('AGB','AGS','AA','SSMF','SSSF'),Number=c(127,67,
 view(Tanzania)
 #Barplot
 Tanzania %>% 
-  ggplot(aes(x = cyl))+ geom_bar()
+  ggplot(aes(x =Species,y=Number))+
+  geom_bar(stat = "identity")
+
 Nigeria<- data.frame(Species=c('AGB','AGS','AA','SSMF','SSSF'),Number=c(115,61,42,42,17))
 view(Nigeria)
 #Barplot
+Nigeria %>% 
+  ggplot(aes(x =Species,y=Number))+
+  geom_bar(stat = "identity")
 
 Niger<- data.frame(Species=c('AGB','AGS','AA','SSMF','SSSF'),Number=c(9,9,9,9,3))
 view(Niger)
 #Barplot
+Niger %>% 
+  ggplot(aes(x =Species,y=Number))+
+  geom_bar(stat = "identity")
+
 
 Mali<- data.frame(Species=c('AGB','AGS','AA','SSMF','SSSF'),Number=c(56,46,28,24,15))
 view(Mali)
 #Barplot
+Mali %>% 
+  ggplot(aes(x =Species,y=Number))+
+  geom_bar(stat = "identity")
 
